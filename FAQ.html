@@ -36,7 +36,7 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             text-align: center;
             padding: 20px;
             margin-top: 80px; /* Adjust based on header height */
@@ -48,7 +48,7 @@
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .carousel-inner {
@@ -73,9 +73,8 @@
         }
 
         .carousel-control-prev, .carousel-control-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            position: fixed;
+            top: 100px;
             color: #000;
             font-size: 24px;
             cursor: pointer;
@@ -83,11 +82,11 @@
         }
 
         .carousel-control-prev {
-            left: 10px;
+            left: 30px; /* Increase spacing on the left */
         }
 
         .carousel-control-next {
-            right: 10px;
+            right: 30px; /* Increase spacing on the right */
         }
 
         #footer {
@@ -113,11 +112,9 @@
 
         <!-- Header -->
         <header id="header">
-            <span class="logo"><a href="/">THE STRINGSISTERS </a></span>
+            <span class="logo"><a href="/">THE STRINGSISTERS</a></span>
             <a href="#menu"><span>Menu</span></a>
         </header>
-
-
 
         <!-- Nav -->
         <nav id="menu">
@@ -132,37 +129,45 @@
             </div>
         </nav>
 
-
-
+       
         <!-- Main content -->
-        <div class="main-content">
-            <div id="faq-carousel" class="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <h3>What services do you offer?</h3>
-                        <p>We offer music lessons, solo performances, and duo performances for various events.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>How can I book you for an event?</h3>
-                        <p>You can book us by visiting our <a href="bookings">booking page</a> and filling out the inquiry form.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Do you offer custom music pieces?</h3>
-                        <p>Yes, we can create custom music pieces tailored to your event's needs.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>What genres of music do you perform?</h3>
-                        <p>We perform a wide range of genres including classical, contemporary, jazz, film scores, and pop.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Where have you performed?</h3>
-                        <p>We have performed in various venues in the GTA including Koerner Hall, The ROM, Graydon Hall, and Casa Loma.</p>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#" role="button">&#x2190; <!-- ◀ --></a>
-                <a class="carousel-control-next" href="#" role="button">&#x2192; <!-- ▶ --></a>
+<div class="main-content" style="padding-top: 10px; position: relative;">
+    <div id="faq-carousel" class="carousel">
+        <div style="position: fixed; top: 10px; width: 100%; display: flex; justify-content: space-between; padding: 10px 10px; z-index: 1000;">
+            <a class="carousel-control-prev" href="#" role="button" style="padding: 10px;">&#x2190; <!-- ◀ --></a>
+            <a class="carousel-control-next" href="#" role="button" style="padding: 10px;">&#x2192; <!-- ▶ --></a>
+        </div>
+        <div class="carousel-inner" style="margin-top: 20px;">
+            <div class="carousel-item active">
+                <h3>How does the music selection work / how many songs should / can we pick?</h3>
+                <p>Special requests are songs currently not on our repertoire. We accept two special requests songs as a part of the package price.</p>
+                <p>If you are hiring our services for the ceremony, we recommend you choose what you would like us to play for all the apply:</p>
+             
+                    <p>Bridal Party entrance<br>
+                    Groom entrance<br>
+                    Bride entrance<br>
+                    Signing of the registrar<br>
+                    Bride and Groom recessional</p>
+             
+                <p>This is a basic template and can be adjusted for your personalized ceremony needs.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>How do I Book The StringSisters?</h3>
+                <p>We make a customized quote and contract for each event we book. In order to book our services, a $250 deposit must be sent to <a href="mailto:payments@stringsisters.ca">payments@stringsisters.ca</a> and all documents must be signed. Then we are all set!</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Can the harp and cello be moved from one location to another (example, from ceremony to cocktail hour location)?</h3>
+                <p>Yes! We are able to set up and perform at one location and then relocate when needed. It is usually a 15-minute process (depending on the distance between two spots) to relocate and quickly re-tune our instruments after they have been packed up and unloaded.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Do musicians come with AV set up? Do musicians need to be mic’d?</h3>
+                <p>At this time, we are a completely acoustic duo and do not offer any AV support. However, we are in the works to have a sound system for 2025 events.</p>
+                <p>We do not necessarily require to be mic’d, but we always recommend it when possible. Ceremonies do not require us to be mic’d but for a louder setting like a cocktail hour or reception, we recommend being mic’d.</p>
             </div>
         </div>
+    </div>
+</div>
+
 
        <!-- Bottom Section -->
 <section id="footer" class="wrapper style2 copyright">
@@ -203,7 +208,7 @@
             const prevBtn = document.querySelector('.carousel-control-prev');
             const nextBtn = document.querySelector('.carousel-control-next');
             let currentIndex = 0;
-            const intervalTime = 5000; // 5 seconds
+            const intervalTime = 500000; // 5 seconds
 
             function showItem(index) {
                 items.forEach(item => item.classList.remove('active'));
