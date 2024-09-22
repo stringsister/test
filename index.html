@@ -1,36 +1,73 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
+
 <head>
     <title>The StringSisters</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Discover Toronto's Harp and Cello Duo for Unforgettable Live Music at Weddings & Events. Elevate Your Special Occasion with The StringSisters. Book Now!">
+    <meta name="description" content="Discover Toronto's Harp and Cello Duo for Unforgettable Live Music at Weddings & Events. Elevate Your Special Occasion with The StringSisters. Book Now!" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favi/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favi/favicon-16x16.png">
+    <link rel="manifest" href="/images/favi/site.webmanifest">
+    <link rel="mask-icon" href="/images/favi/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/images/favi/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/images/favi/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/reviews.css" />
+
+    <!-- Raining Music Note Animation -->
+    <style>
+        @keyframes rain {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .music-note {
+            position: absolute;
+            font-size: 20px;
+            animation: rain 5s linear infinite;
+            color: #000;
+        }
+
+        #main-carousel {
+            position: relative;
+        }
+    </style>
 </head>
+
 <body class="is-preload">
-    <!-- Page wrapper -->
+
+    <!-- Page Wrapper -->
     <div id="page-wrapper">
+
         <!-- Header -->
         <header id="header" class="alt">
             <span class="logo"><a href="/">The StringSisters</a></span>
             <a href="#menu"><span>Menu</span></a>
         </header>
-        <!-- Nav -->
+
+        <!-- Navigation -->
         <nav id="menu">
             <div class="inner">
                 <h2>Menu</h2>
                 <ul class="links">
-                    
                     <li><a href="bookings">Book Us</a></li>
-					<li><a href="services">About Us</a></li>
+                    <li><a href="services">About Us</a></li>
                     <li><a href="FAQ">FAQ</a></li>
                 </ul>
                 <a class="close"><span>Close</span></a>
             </div>
         </nav>
-        <!-- Banner -->
-        <section id="banner">
+
+        <!-- Main Image Carousel -->
+        <section id="banner" class="carousel" id="main-carousel">
             <div class="inner">
                 <h1>The StringSisters</h1>
                 <div class="content">
@@ -41,52 +78,64 @@
                 </div>
             </div>
         </section>
+
         <!-- Google Reviews Section -->
         <section id="footer" class="wrapper" style="margin-bottom: 0;">
             <div class="inner">
-                <h2>
-                    <a href="https://maps.app.goo.gl/Jis5sQ6UGGzLbQ9v8" target="_blank">
-                        Client Reviews &#10140;
-                    </a>
-                </h2>
+                <h2><a href="https://maps.app.goo.gl/Jis5sQ6UGGzLbQ9v8" target="_blank">Latest Reviews &#10140;</a></h2>
                 <div id="google-reviews-carousel" class="carousel">
                     <div class="carousel-inner" id="reviews-container">
-                        <!-- Reviews will be dynamically inserted here -->
+                        <!-- Reviews dynamically inserted here -->
                     </div>
                 </div>
-                <div style="width: 75%; margin: 20px auto; border-bottom: 1px solid #000;"></div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <a href="https://www.instagram.com/stringsisterz" target="_blank"><img src="images/socials/instagram.png" alt="Instagram" style="width: 50px; height: 50px; margin: 0 10px;"></a>
+                <a href="https://www.youtube.com/channel/UCbJYz7DQmDzqoopXE74xDKA" target="_blank"><img src="images/socials/youtube.png" alt="YouTube" style="width: 50px; height: 50px; margin: 0 10px;"></a>
+                <a href="https://www.tiktok.com/@stringsisterz" target="_blank"><img src="images/socials/tiktok.png" alt="TikTok" style="width: 50px; height: 50px; margin: 0 10px;"></a>
+            </div>
+            <div style="text-align: center;">&copy; The StringSisters 2024</div>
+        </footer>
+
     </div>
-    <!-- Footer -->
-    <footer>
-        <div style="text-align: center; margin-bottom: 10px;">
-            <a href="https://www.instagram.com/stringsisterz" target="_blank">
-                <img src="images/socials/instagram.png" alt="Instagram" style="width: 50px; height: 50px; margin: 0 10px;">
-            </a>
-			<a href="https://www.youtube.com/channel/UCbJYz7DQmDzqoopXE74xDKA" target="_blank">
-                <img src="images/socials/youtube.png" alt="YouTube" style="width: 50px; height: 50px; margin: 0 10px;">
-            </a>
-            <a href="https://www.tiktok.com/@stringsisterz" target="_blank">
-                <img src="images/socials/tiktok.png" alt="TikTok" style="width: 50px; height: 50px; margin: 0 10px;">
-            </a>
-           
-        </div>
-        <div style="text-align: center;">
-            &copy; The StringSisters 2024
-            <br><br>
-        </div>
-    </footer>
-</div>
-<!-- Include the Google Places API script with your API key -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWyfZTApDj2-IU-qAyIYVRQLVtRwq_cjI&libraries=places"></script>
-<script src="assets/js/reviews.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+
+    <!-- Raining Music Notes Script -->
+    <script>
+        const mainCarousel = document.getElementById('main-carousel');
+        mainCarousel.addEventListener('scroll', createRain);
+
+        function createRain() {
+            for (let i = 0; i < 10; i++) {
+                const note = document.createElement('div');
+                note.classList.add('music-note');
+                note.textContent = getRandomNote();
+                note.style.left = Math.random() * 100 + 'vw';
+                note.style.animationDuration = Math.random() * 2 + 3 + 's';
+                note.style.fontSize = Math.random() * 10 + 20 + 'px';
+                mainCarousel.appendChild(note);
+
+                setTimeout(() => {
+                    note.remove();
+                }, 5000);
+            }
+        }
+
+        function getRandomNote() {
+            const notes = ['♪', '♫', '♩', '♬', '♭'];
+            return notes[Math.floor(Math.random() * notes.length)];
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
